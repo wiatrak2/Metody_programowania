@@ -24,10 +24,10 @@ void print (point3d *point, double angle_x, double angle_y, double observer, vec
     point2d *print_point = surf(new_point, observer);
     if (!moveto)
     {
-        fprintf(file ,"%.4f %.4f moveto\n", print_point->x, print_point->y);
+        fprintf(file ,"%.8lf %.8lf moveto\n", print_point->x, print_point->y);
         moveto = true;
     }
-    fprintf(file, "%.4f %.4f lineto\n", print_point->x, print_point->y);
+    fprintf(file, "%.8lf %.8lf lineto\n", print_point->x, print_point->y);
 }
 
 
@@ -61,7 +61,7 @@ void hilbert (int n, point3d *point, dir *d1, dir *d2, dir *d3, vector *vec, dou
     }
 }
 
-int main() {
+int main(int argc, const char * argv[]) {
     
     int n;
     double angle_x;
@@ -70,18 +70,18 @@ int main() {
     double draw_size;
     double observer;
     double cube_size;
-    file = fopen("test.ps", "w");
+    file = fopen("hilbert3D.ps", "w");
     
-    n = 5;
-    angle_x = 22;
-    angle_y = -30;
-    draw_size = 1500;
-    observer = 1300;
-    cube_size = ((1<<n) - 1) * 30;
-    translation.x = 100;
-    translation.y = 200;
-    translation.z = 100;
-    
+    sscanf(argv[1], "%d", &n);
+    sscanf(argv[2], "%lf", &draw_size);
+    sscanf(argv[3], "%lf", &cube_size);
+    sscanf(argv[4], "%lf", &observer);
+    sscanf(argv[5], "%lf", &translation.x);
+    sscanf(argv[6], "%lf", &translation.y);
+    sscanf(argv[7], "%lf", &translation.z);
+    sscanf(argv[8], "%lf", &angle_x);
+    sscanf(argv[9], "%lf", &angle_y);
+
     double path = cube_size / ((1<<n) - 1);
 
     dir d[3];
