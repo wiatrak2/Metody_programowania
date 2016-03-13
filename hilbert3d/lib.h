@@ -13,7 +13,7 @@ typedef struct point2d{
     double y;
 }point2d;
 
-typedef struct dir{
+typedef struct dir{ //struktura trzymająca kierunek w postaci wektoru. Wyznacza kolejne przesunięcie punktu na krzywej
     double x;
     double y;
     double z;
