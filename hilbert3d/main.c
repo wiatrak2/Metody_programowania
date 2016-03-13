@@ -1,3 +1,4 @@
+//Wojciech Pratkowiecki II UWr
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
