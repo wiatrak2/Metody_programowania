@@ -1,6 +1,7 @@
 CC = gcc
 Flags = -Wall -std=c99
-
+run: hilbert3D
+	./hilbert3D 5 3000 2400 2500 700 700 700 33 -33
 hilbert3D: main.o point_ops.o matrix.o
 	$(CC) $(Flags) -o hilbert3D main.o point_ops.o matrix.o -lm
 

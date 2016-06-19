@@ -1,0 +1,6 @@
+Wojciech Pratkowiecki 281417
+Metody Programowania 2016
+Lista zadań na pracownię nr 4+5
+
+Katalog zawiera pliki *.hs będące rozwiązaniem zadania a także plik Makefile który przy wywołaniu komendą make kompiluje program a także wywołuje go z argumentami 1234567890 HRK
+Katalog można oczyścić komendą make clean
